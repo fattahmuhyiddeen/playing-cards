@@ -1,16 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div>
       <header className="App-header">
         <div className="content">
-          <div className="form-group">
-            <label for="exampleInputEmail">Number of players</label>
-            <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" min="0" />
-            <input className="btn btn-primary" type="button" value="Deal" />
+          <div className="input-group">
+            <input placeholder="Number of players" value={input} onChange={e => setInput(e.target.value)} type="number" className="form-control" min="0" />
+            <span className="input-group-btn">
+              <button className="btn btn-primary" onClick={() => alert(input)} type="button">Go</button>
+            </span>
           </div>
         </div>
       </header>
