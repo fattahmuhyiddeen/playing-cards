@@ -14,3 +14,24 @@
   border-radius: 10px;
   padding: 10px;
 }
+
+.result{
+  overflow: auto;
+  width: 41em; 
+  height: 33em;
+  background-color: white;
+  padding: 1em;
+  border-radius: .6em;
+  margin-top: .8em;
+}
+
+.value{
+  font-style: italic;
+  color: #888888
+}
+
+.loading{
+  width: 3em;
+  height: 3em;
+  margin-top: .5em;
+}
