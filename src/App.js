@@ -59,7 +59,7 @@ const App = () => {
                 const item = data[index];
                 let value = 'No card';
                 if (item.length > 0) {
-                  value = item.map(i => `${i[0]}-${i[1]}, `);
+                  value = item.map(i => `${i[1]}-${i[0]}, `);
                 }
                 return (
                   <div key={key} style={{ backgroundColor: isOdd ? '#eeeeee' : '#dddddd' }}>
