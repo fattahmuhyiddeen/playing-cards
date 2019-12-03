@@ -25,7 +25,7 @@ const App = () => {
           setData(data);
         }
       })
-      .catch(() => setError('An error had occured'))
+      .catch(() => setError('Irregularity occurred'))
       .finally(() => setIsLoading(false))
   }
 
@@ -34,7 +34,7 @@ const App = () => {
       <header className="App-header">
         <div className="content">
           <div className="input-group">
-            <input placeholder="Number of players" value={input} onChange={e => setInput(e.target.value)} type="number" className="form-control" min="0" />
+            <input placeholder="Number of players" onKeyUp={e => e.key === 'Enter' && callApi()} value={input} onChange={e => setInput(e.target.value)} type="number" className="form-control" min="0" />
             <span className="input-group-btn">
               <button className="btn btn-primary" onClick={() => callApi()} type="button">Go</button>
             </span>
@@ -59,7 +59,7 @@ const App = () => {
                 const item = data[index];
                 let value = 'No card';
                 if (item.length > 0) {
-                  value = item.map(i => `${i[0]}-${i[1]}`);
+                  value = item.map(i => `${i[0]}-${i[1]}, `);
                 }
                 return (
                   <div key={key} style={{ backgroundColor: isOdd ? '#eeeeee' : '#dddddd' }}>
