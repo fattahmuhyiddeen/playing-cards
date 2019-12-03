@@ -25,7 +25,7 @@ const App = () => {
           setData(data);
         }
       })
-      .catch(err => setError(JSON.stringify(err)))
+      .catch(() => setError('An error had occured'))
       .finally(() => setIsLoading(false))
   }
 
@@ -47,7 +47,7 @@ const App = () => {
           )}
           {isLoading && (
             <center>
-              <img className="loading" src={LoadingImage} />
+              <img alt="loading" className="loading" src={LoadingImage} />
             </center>
           )}
         </div>
@@ -55,16 +55,18 @@ const App = () => {
           <div className="result">
             <ReactList
               itemRenderer={(index, key) => {
-                const isOdd = index % 2 == 1;
+                const isOdd = index % 2 === 1;
                 const item = data[index];
                 let value = 'No card';
                 if (item.length > 0) {
                   value = item.map(i => `${i[0]}-${i[1]}`);
                 }
-                return <div key={key} style={{ backgroundColor: isOdd ? '#eeeeee' : '#dddddd' }}>
-                  {`Player #${index + 1}: `}
-                  <span className="value">{value}</span>
-                </div>
+                return (
+                  <div key={key} style={{ backgroundColor: isOdd ? '#eeeeee' : '#dddddd' }}>
+                    {`Player #${index + 1}: `}
+                    <span className="value">{value}</span>
+                  </div>
+                )
               }}
               length={data.length}
               type='uniform'
