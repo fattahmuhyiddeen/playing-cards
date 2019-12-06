@@ -3,8 +3,7 @@ import ReactList from 'react-list';
 import LoadingImage from './loading.gif';
 import './App.css';
 
-const URL = 'http://playing-cards-backend.test';
-// const URL = 'https://playing-cards-backend.herokuapp.com';
+const URL = 'https://playing-cards-backend.herokuapp.com';
 
 const App = () => {
   const [input, setInput] = useState('');
