@@ -1,3 +1,5 @@
+## Time Taken
+Time taken to complete this is around 6 hours
 
 ## Demo
 To demo this project, go to `https://playing-cards.netlify.com/`
